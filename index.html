@@ -823,10 +823,6 @@ function libMark() {
   m.dots.forEach((d) => { d.c.style.display = libShown(d.r) ? "" : "none"; d.c.setAttribute("cx", px); d.c.setAttribute("cy", m.ly(libTotal(d.r, n))); });
   const rows = libModels.map((r) => ({ r, machine: n * unit(r) })).sort((a, b) => a.machine - b.machine);
   const shown = rows.filter((x) => libShown(x.r));
-  const best = shown[0];
-
-  const kop = $("lib-kop");
-  if (kop) kop.innerHTML = "<b>" + esc(short(best.r.m)) + "</b> · " + usd(best.machine) + " bij " + n.toLocaleString("nl") + " pagina's.";
 
   const sk = libState.sort.k;
   const val = (x) => (sk === "name" ? short(x.r.m) : sk === "err" ? x.r.err : x.machine);
