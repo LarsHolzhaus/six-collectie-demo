@@ -254,8 +254,11 @@
     .punten.klein { font-size: 20px; }
     .stappen { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 26px; }
     .stappen li { display: flex; align-items: center; gap: 18px; font-size: 30px; line-height: 1.2; }
-    .stappen .ico { width: 36px; height: 36px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .stappen small { font-size: 18px; color: var(--gedempt); }
+    .stappen .ico, .fase .ico { width: 36px; height: 36px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .stappen small, .fase small { font-size: 18px; color: var(--gedempt); }
+    .stappen-blok { justify-content: center; gap: 36px; }
+    .fase { display: flex; align-items: center; gap: 18px; font-size: 34px; line-height: 1.2; padding-bottom: 28px; border-bottom: 1px solid var(--lijn); }
+    .fase .ico { width: 42px; height: 42px; }
     .twee { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .twee .kaartje { background: var(--kaart); border: 1px solid var(--lijn); border-radius: 12px; padding: 20px 24px; }
     .twee h3 { margin: 0 0 8px; font-size: 22px; }
@@ -475,7 +478,12 @@
 
   <section class="dia">
     <h2>Mogelijke volgende stappen</h2>
-    <div class="lijf midden">
+    <div class="lijf stappen-blok">
+      <div class="fase">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5.8 19.2c1.1-3.1 3.4-4.6 6.2-4.6s5.1 1.5 6.2 4.6"/></svg>
+        <span>Eerst zelf gebruiken</span>
+        <small>1 week</small>
+      </div>
       <ul class="stappen">
         <li>
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5V8h4.5"/><path d="M9.5 12.2h6M9.5 15.6h6"/></svg>
@@ -484,11 +492,6 @@
         <li>
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.6"/><path d="M5 6v12c0 1.45 3.13 2.6 7 2.6s7-1.15 7-2.6V6"/><path d="M5 12c0 1.45 3.13 2.6 7 2.6s7-1.15 7-2.6"/></svg>
           <span>Databaseconnectie</span>
-        </li>
-        <li>
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5.8 19.2c1.1-3.1 3.4-4.6 6.2-4.6s5.1 1.5 6.2 4.6"/></svg>
-          <span>Eerst zelf gebruiken</span>
-          <small>1 week</small>
         </li>
         <li>
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 8.5h17"/><path d="M12 12v5M9.5 14.5h5"/></svg>
